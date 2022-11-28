@@ -1,4 +1,6 @@
 # HealthCheck Application
 
-1. To start the hello world application run: deploy.sh
-2. To start the health check run: health-check.sh
+1. aws configure
+2. Start the hello world application with: deploy.sh
+3. Start the health check: health-check.sh
+
