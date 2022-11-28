@@ -1,6 +1,11 @@
 # HealthCheck Application
 
+# Create infrastructure
 1. aws configure
-2. Start the hello world application with: deploy.sh
-3. Start the health check: health-check.sh
+2. Start hello world application with: deploy.sh
 
+# Run health check
+1. Start health check: health-check.sh
+
+# Destroy infrastructure
+1. Run: destroy.sh
