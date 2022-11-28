@@ -1,0 +1,49 @@
+Transform: S3Objects
+
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: hello-world-displayr-dummy-server
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+
+  S3Index:
+    Type: AWS::S3::Object
+    Properties:
+      Target:
+        Bucket: !Ref Bucket
+        Key: index.html
+        ACL: public-read
+        ContentType: text/html
+      Body: !Sub |
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Dummy</title>
+            </head>
+            <body>
+                <p>Hello World!</p>
+            </body>
+        </html>
+
+  S3Error:
+    Type: AWS::S3::Object
+    Properties:
+      Target:
+        Bucket: !Ref Bucket
+        Key: 404.html
+        ACL: public-read
+        ContentType: text/html
+      Body: !Sub |
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Dummy</title>
+            </head>
+            <body>
+                <p>404!</p>
+            </body>
+        </html>
